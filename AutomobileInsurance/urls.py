@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from InsuranceApp import trainingModels
+
+trainingModels.train()
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
