@@ -18,8 +18,14 @@ from django.urls import path
 
 from InsuranceApp import trainingModels
 
+from InsuranceApp import views
+
 trainingModels.train()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.home, name="home"),
+    path('newInsured', views.newInsured, name="newInsured"),
+    path('predict', views.predict, name="predict"),
+    path('stats', views.stats, name="stats"),
+    path('about/', views.about, name="about")    
 ]

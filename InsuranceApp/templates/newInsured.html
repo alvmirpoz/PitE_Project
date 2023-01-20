@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Álvaro Miranda, Marcos Lozano, Eva Gozalo">
+    <title>New Insured Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+      body {
+        background-image: url("{% static 'img/imagenFondo.jpeg' %}");
+      }
+	  </style>
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  </head>
+
+<body class="d-flex h-100 text-center text-">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Automobile Insurance</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="/">Home</a>
+          <a class="nav-link fw-bold py-1 px-0 active" href="newInsured">Check claim</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Learn more </a>
+          
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Age">Age</label>
+            <select class="form-control" id="Age">
+              <option selected disabled hidden>Select an option</option>
+              <option>16-25</option>
+              <option>26-39</option>
+              <option>40-64</option>
+              <option>65+</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Gender">Gender</label>
+            <select class="form-control" id="Gender">
+              <option selected disabled hidden>Select an option</option>
+              <option>male</option>
+              <option>female</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Race">Race</label>
+            <select class="form-control" id="Race">
+              <option selected disabled hidden>Select an option</option>
+              <option>majority</option>
+              <option>minority</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="DrivingExperience">Driving Experience</label>
+            <select class="form-control" id="DrivingExperience">
+              <option selected disabled hidden>Select an option</option>
+              <option>0-9y</option>
+              <option>10-19y</option>
+              <option>20-29y</option>
+              <option>30y+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Education">Education</label>
+            <select class="form-control" id="Education">
+              <option selected disabled hidden>Select an option</option>
+              <option>none</option>
+              <option>high school</option>
+              <option>university</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Income">Income</label>
+            <select class="form-control" id="Income">
+              <option selected disabled hidden>Select an option</option>
+              <option>poverty</option>
+              <option>working class</option>
+              <option>middle class</option>
+              <option>upper class</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VehicleOwnership">Vehicle Ownership</label>
+            <select class="form-control" id="VehicleOwnership">
+              <option selected disabled hidden>Select an option</option>
+              <option>yes</option>
+              <option>no</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="VehicleYear">Vehicle Year</label>
+            <select class="form-control" id="VehicleYear">
+              <option selected disabled hidden>Select an option</option>
+              <option>before 2015</option>
+              <option>after 2015</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Married">Married</label>
+            <select class="form-control" id="Married">
+              <option selected disabled hidden>Select an option</option>
+              <option>no</option>
+              <option>yes</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Children">Children</label>
+            <select class="form-control" id="Children">
+              <option selected disabled hidden>Select an option</option>
+              <option>no</option>
+              <option>yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VehicleType">Vehicle Type</label>
+            <select class="form-control" id="VehicleType">
+              <option selected disabled hidden>Select an option</option>
+              <option>sedan</option>
+              <option>sports car</option>
+            </select>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-lg btn-light fw-bold border-white bg-white" value="Submit Form">
+      </form>
+    </div>
+
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
