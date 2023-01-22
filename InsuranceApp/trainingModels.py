@@ -10,7 +10,7 @@ def Naive_Bayes(training_attributes, training_target, smoothing):
     
     # We train the model
     clasif_NB.fit(training_attributes, training_target)
-
+    
     return clasif_NB
 
 # DECISION TREE MODELS
@@ -23,15 +23,7 @@ def Decision_Tree(training_attributes, training_target, depth):
 
     # We train the model
     clasif_DT.fit(training_attributes, training_target)
-    
-    """
-    # We show the tree resulting from training the model
-    pyplot.figure(figsize=(100, 20))  # Width and height of graphics
-    tree.plot_tree(clasif_DT,
-                    feature_names=attributes_coder.feature_names_in_,
-                    class_names=target_coder.classes_)
-    """
-    
+
     return clasif_DT
 
 # KNN MODELS
@@ -60,7 +52,11 @@ def prepareDataset():
     coded_attributes = attributes_coder.transform(attributes)
 
     target_coder = preprocessing.LabelEncoder()
-    coded_target = target_coder.fit_transform(target)
+    target_coder.fit(target)
+    coded_target = target_coder.transform(target)
+
+    # We will later need this trained coder
+    pickle.dump(attributes_coder, open('InsuranceApp/pickled/attributes_coder.pkl', 'wb'))
 
     # Dividing into training and testing subsets
     (training_attributes, test_attributes, training_target, test_target) = model_selection.train_test_split(

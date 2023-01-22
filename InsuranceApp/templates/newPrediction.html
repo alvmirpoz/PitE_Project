@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Álvaro Miranda, Marcos Lozano, Eva Gozalo">
+    <title>Will I claim?</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+      body {
+        background-image: url("{% static 'img/imagenFondo.jpeg' %}");
+      }
+	  </style>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+
+<body class="d-flex h-100 text-center text-">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header>
+      <div>
+        <h3 class="float-md-start mb-0">Automobile Insurance</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" href="/">Home</a>
+          <a class="nav-link fw-bold py-1 px-0 active" href="newPrediction">Will I claim?</a>
+          <a class="nav-link fw-bold py-1 px-0" href="learnMore">Learn more </a>
+          
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <form action="myPrediction" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Age">Age</label>
+            <select class="form-control" name="Age" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="16-25">16-25</option>
+              <option value="26-39">26-39</option>
+              <option value="40-64">40-64</option>
+              <option value="65+">65+</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Gender">Gender</label>
+            <select class="form-control" name="Gender" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Race">Race</label>
+            <select class="form-control" name="Race" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="majority">majority</option>
+              <option value="minority">minority</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="DrivingExperience">Driving Experience</label>
+            <select class="form-control" name="DrivingExperience" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="0-9y">0-9y</option>
+              <option value="10-19y">10-19y</option>
+              <option value="20-29y">20-29y</option>
+              <option value="30y+">30y+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Education">Education</label>
+            <select class="form-control" name="Education" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="none">none</option>
+              <option value="high school">high school</option>
+              <option value="university">university</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Income">Income</label>
+            <select class="form-control" name="Income" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="poverty">poverty</option>
+              <option value="working class">working class</option>
+              <option value="middle class">middle class</option>
+              <option value="upper class">upper class</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VehicleOwnership">Vehicle Ownership</label>
+            <select class="form-control" name="VehicleOwnership" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="VehicleYear">Vehicle Year</label>
+            <select class="form-control" name="VehicleYear" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="before 2015">before 2015</option>
+              <option value="after 2015">after 2015</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Married">Married</label>
+            <select class="form-control" name="Married" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="no">no</option>
+              <option value="yes">yes</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Children">Children</label>
+            <select class="form-control" name="Children" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="no">no</option>
+              <option value="yes">yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VehicleType">Vehicle Type</label>
+            <select class="form-control" name="VehicleType" required>
+              <option value="" selected disabled hidden data-required="true">Select an option</option>
+              <option value="sedan">sedan</option>
+              <option value="sports car">sports car</option>
+            </select>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-lg btn-light fw-bold border-white bg-white" value="Submit Form">
+      </form>
+    </div>
+    </div>
+
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

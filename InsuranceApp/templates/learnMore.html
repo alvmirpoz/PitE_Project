@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Álvaro Miranda, Marcos Lozano, Eva Gozalo">
+  <title>Home</title>
+  <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url("{% static 'img/imagenFondo.jpeg' %}");
+    }
+  </style>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header>
+      <div>
+        <h3 class="float-md-start mb-0">Automobile Insurance</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" href="/">Home</a>
+          <a class="nav-link fw-bold py-1 px-0" href="newPrediction"> Will I claim?</a>
+          <a class="nav-link fw-bold py-1 px-0 active" href="learnMore">Learn more </a>
+
+        </nav>
+      </div>
+    </header>
+
+    <main class="py-3">
+        <p class="lead">Our predictions are based on predictive models trained on 6700 cases.<br />
+            We have trained a total of 6 different models, using 3 algorithms and 
+            an empirical optimization of their hyperparameters.</p>
+        <p class="lead"> Here we can see a graph generated with a test of 3300 test cases. 
+            Comparing the models according to the Binary Cross Entropy obtained, we can have an 
+            approximate idea of how reliable they have been (this measure is a 'loss', so the closer 
+            to 0, the more reliable the model).</p>
+    </main>
+    <img src="{% static 'img/crossEntropyGraph.png' %}" alt="Graph">
+    <main>
+        <p class="lead graphConclusion">As we can see, the best model has turned out to be the one using 
+            the Decision Tree algorithm, with tree depth hyperparameter equal to 3.</p>
+    </main>
+    
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

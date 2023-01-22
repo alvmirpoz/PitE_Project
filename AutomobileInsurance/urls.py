@@ -16,16 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from InsuranceApp import trainingModels
-
 from InsuranceApp import views
-
-trainingModels.train()
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('newInsured', views.newInsured, name="newInsured"),
-    path('predict', views.predict, name="predict"),
-    path('stats', views.stats, name="stats"),
-    path('about/', views.about, name="about")    
+    path('newPrediction', views.newPrediction, name="newPrediction"),
+    path('myPrediction', views.myPrediction, name="myPrediction"),
+    path('learnMore', views.learnMore, name="learnMore")   
 ]

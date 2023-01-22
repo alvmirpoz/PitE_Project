@@ -25,12 +25,28 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 80em;
 }
 
+h2 {
+  font-size: 2em;
+  text-align: center;
+  color: #343a40;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+.graphConclusion{
+  font-style: oblique;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+em {
+  color: rgb(0, 139, 10);
+}
 
 /*
- * Header
+ * Nav Bar
  */
 
 .nav-masthead .nav-link {
@@ -50,4 +66,37 @@ body {
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+/* Form */
+form {
+  margin-top: 40px;
+}
+
+/* Table */
+table {
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Table head */
+thead {
+  background-color: rgba(24, 24, 24, 0.8);
+  color: white;
+}
+
+/* Align first column to the left */
+td:first-child {
+  text-align: left;
+}
+
+/* Table body */
+tbody {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Highlight largest value */
+td.highlight {
+  background-color: rgba(255, 166, 0, 0.8);
+  color: white;
 }

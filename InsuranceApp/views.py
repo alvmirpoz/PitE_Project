@@ -1,53 +1,31 @@
 from django.shortcuts import render
 
-# Create your views here.
+from InsuranceApp import trainingModels
+from InsuranceApp import results
 
-
-res = None
+# This allow us to train models automatically when server is started
+trainingModels.train()
+# This allow us to generate the graph comparing the models automatically when server is started
+results.generateEntropiesGraph()
 
 def home(request):
     return render(request, 'home.html')
 
-def predict(request):
-    return render(request,'predict.html')
+def newPrediction(request):
+    return render(request,'newPrediction.html')
 
-def stats(request):
-    return 0
+def myPrediction(request):
+    
+    user_attributes = []
+    attributes = ['Age', 'Gender', 'Race', 'DrivingExperience', 'Education',
+    'Income', 'VehicleOwnership', 'VehicleYear', 'Married', 'Children', 'VehicleType']
 
-def newInsured(request):
-    return render(request,'newInsured.html')
-#     if request.method == 'POST':
-#         form = TourismForm(request.POST)
-        
-#         if form.is_valid():
+    for a in attributes:
+        user_attributes.append(request.POST.get(a))
 
-#             year =     form.cleaned_data['year']
-#             duration = form.cleaned_data['duration']
-#             spends = form.cleaned_data['spends'] / 1000
-#             mode = int(form.cleaned_data['mode'])
-#             purpose = int(form.cleaned_data['purpose'])
-#             quarter =  int(form.cleaned_data['quarter'])
-#             country =  int(form.cleaned_data['country'])
+    predictions = results.predictUser(user_attributes)
 
-#             x = [quarter, mode, purpose, year, duration, country, spends, 0.38]
-#             global res
-#             res = logic_layer(x)
-#             return redirect("/predict")
-#         else:
-#             problem = form.errors.as_data()
-#             # This section is used to handle invalid data 
-#             messages.error(request, list(list(problem.values())[0][0])[0])
-#             form = TourismForm()
-#     form = TourismForm()
-#     return render(request=request, template_name='main/index2.html', context={"form": form})
+    return render(request, 'myPrediction.html', {'predictions': predictions})
 
-
-def about(request):
-    return render(request=request, 
-            template_name="about.html")
-
-
-# def under_construction(request):
-#     messages.info(request, "This page coming soon..")
-#     return render(request=request, 
-#             template_name="main/under_construction.html")
+def learnMore(request):
+    return render(request,'learnMore.html')
